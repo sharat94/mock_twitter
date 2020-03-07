@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :tweets
   devise_for :users
 
+  resources :users, only: :index
+  post 'unfollow_user', to: 'users#unfollow_user'
   post 'follow_user', to: 'users#follow_user'
   get 'user_profile', to: 'users#user_profile'
   namespace :api do
