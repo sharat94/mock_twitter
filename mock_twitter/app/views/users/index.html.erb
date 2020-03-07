@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Users</h1>
+<table>
+  <thead>
+  <tr>
+    <th>Email</th>
+    <th>Profile</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.email %></td>
+      <td><%= link_to 'Link', user_profile_path(id: user.id) %><td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
