@@ -13,6 +13,6 @@ Steps:
 
 Further improvements:
 
-Building v1 api endpoints with jwt token integration
-Test cases needs to be added
-User creation currently is only provided via v1 endpoint. Bring functionalit to UI
+1. Building v1 api endpoints with jwt token integration
+2. Test cases needs to be added
+3. User creation currently is only provided via v1 endpoint. Bring functionalit to UI
