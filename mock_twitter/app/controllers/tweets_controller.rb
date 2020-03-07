@@ -6,14 +6,13 @@ class TweetsController < ApplicationController
   # GET /tweets.json
   def index
     order = params[:order]
-    if order&.downcase = 'desc'
+    if order&.downcase == 'desc'
       order = 'DESC'
     else
       order = 'ASC'
     end
     following_user_ids =  current_user.following_users.pluck(:id)
     @tweets = Tweet.joins('INNER JOIN users on tweets.user_id = users.id').where(user_id: following_user_ids).order("created_at #{order}")
-    @tweets = Tweet.joins('INNER JOIN users on tweets.user_id = users.id').all
   end
 
   # GET /tweets/1
