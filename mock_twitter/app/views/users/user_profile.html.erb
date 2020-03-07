@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User Email:</strong>
+  <%= @user.email %>
+  <%= link_to 'follow', follow_user_path(follow_id: @user.id), :method => :post %>
+</p>
+
+<p>
+  <strong>Followed Users</strong>
+  <% @user.followed_users.each do |f| %>
+    <%= f.email %>
+    <%= link_to 'profile', user_profile_path(id: f.id) %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Following Users</strong>
+  <% @user.following_users.each do |f| %>
+    <%= f.email %>
+    <%= link_to 'profile', user_profile_path(id: f.id) %>
+  <% end %>
+</p>
